@@ -1,0 +1,40 @@
+<app-top-bar (openSidenav)="sidenav.toggle()"></app-top-bar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav fixedInViewport fixedTopGap="64" fixedBottomGap="88" mode="side">
+    <mat-nav-list>
+      <a mat-list-item routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon>home</mat-icon>
+        <span>Ana sayfa</span>
+      </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/library">
+        <mat-icon>library_music</mat-icon>
+        <span>Kitaplık</span>
+      </a>
+    </mat-nav-list>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <h3 mat-subheader>ÇALMA LİSTELERİ</h3>
+      <mat-list-item class="active">Songs to Sign in the Car</mat-list-item>
+      <mat-list-item>Generacja Hip Hop</mat-list-item>
+      <mat-list-item>2000's Pop Hits 100</mat-list-item>
+      <mat-list-item>All Out 80s</mat-list-item>
+      <mat-list-item>2000'ler</mat-list-item>
+      <mat-list-item>90'lar</mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <main>
+      <router-outlet></router-outlet>
+
+<!--      <button mat-fab class="fixed-button" (click)="openCreateDialog()">-->
+<!--        <mat-icon>add</mat-icon>-->
+<!--      </button>-->
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<div class="mobile-player">
+  <app-player></app-player>
+  <app-bottom-bar></app-bottom-bar>
+</div>

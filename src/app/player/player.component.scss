@@ -1,0 +1,246 @@
+.player {
+  /*  position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;*/
+  /*  background-color: rgba(255, 255, 255, 0.87);
+    backdrop-filter: saturate(50%) blur(20px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.07), inset 0 1px 1px rgba(255, 255, 255, 0.45);*/
+  // border-top: 1px solid rgba(0,0,0,.04);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .progress-slider {
+    position: absolute;
+    top: 1px;
+    right: -8px;
+    left: -16px;
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+}
+
+mat-progress-bar {
+  height: 2px;
+}
+
+::ng-deep .mat-slider-track-background {
+  // background: rgba(187, 134, 252, 0.38) !important;
+  // background: #bb86fc !important;
+  // opacity: .38;
+}
+
+.player-content {
+  height: 96px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  background-color: #1e1e1e;
+  // backdrop-filter: saturate(50%) blur(20px);
+  // box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.07), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+  // background-color: var(--player-background);
+}
+
+@media (prefers-color-scheme: dark) {
+  .player-content {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .05), 0 1px 3px rgba(0, 0, 0, .01), inset 0 -.5px 0 rgba(255, 255, 255, 0.01);
+  }
+}
+
+.player-center {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+
+  button:first-child, button:last-child {
+    margin: 0 8px;
+  }
+}
+
+button:not(.primary-button) {
+  mat-icon {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.player-left {
+  display: flex;
+  align-items: center;
+}
+
+.player-left img {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 0 24px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.artist {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--medium-emphasis-color);
+}
+
+
+.play-pause-button {
+  margin: 0 16px;
+}
+
+@media (min-width: 599px) {
+
+  .play-pause-button {
+
+    mat-icon {
+      font-size: 40px;
+      line-height: 40px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+
+/* PLayer Right */
+.player-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 24px;
+
+  mat-slider {
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+}
+
+.audio-time {
+  font-size: 12px;
+  line-height: 24px;
+  display: flex;
+  margin: 0 24px;
+  letter-spacing: 0.4px;
+
+  .time-bracket {
+    padding: 0 4px;
+  }
+}
+
+.current-time {
+  font-weight: 400;
+}
+
+@media (max-width: 599px) {
+
+  .player {
+    flex-direction: column-reverse;
+  }
+
+  .player-content {
+    height: 56px;
+  }
+
+  .player-left {
+
+  }
+
+  .player-left img {
+    width: 56px;
+    height: 56px;
+    margin-left: 0;
+  }
+
+  .player-content {
+    grid-template-columns: 1fr auto;
+  }
+
+  .player-center button {
+    display: none;
+  }
+
+  .player-center .play-pause-button {
+    display: block;
+  }
+
+  .player-right {
+    display: none;
+  }
+
+  .title {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+mat-progress-bar {
+  display: none;
+}
+
+@media (max-width: 599px) {
+  mat-slider {
+    display: none;
+  }
+
+  mat-progress-bar {
+    display: block;
+  }
+}
+
+@media (max-width: 599px) {
+  ::ng-deep .mat-progress-bar-background {
+    fill: transparent !important;
+    fill: #1e1e1e;
+  }
+
+  ::ng-deep .mat-progress-bar-buffer {
+    background-color: rgba(255, 255, 255, 0.24);
+    background-color: #1e1e1e;
+  }
+}
+
+:host ::ng-deep mat-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+// hover time info
+#hover-time-info {
+  font-family: Roboto, Noto Naskh Arabic UI, Arial, sans-serif;
+  font-size: 12px;
+  line-height: var(--ytmusic-caption-1_-_line-height);
+  font-weight: 400;
+  color: #fff;
+  display: none;
+  position: absolute;
+  top: -8px;
+  transform: translate3d(-50%, -100%, 0);
+  padding: 4px 8px;
+  border-radius: 2px;
+  background-color: #1d1d1d;
+
+  left: 474px;
+  display: initial;
+}
+
+/*
+::ng-deep .mat-primary .mat-slider-track-fill, .mat-primary .mat-slider-thumb, .mat-primary .mat-slider-thumb-label {
+  background-color: #ff0000 !important;
+}
+
+::ng-deep .mat-primary .mat-slider-track-fill, .mat-primary .mat-slider-thumb, .mat-primary .mat-slider-thumb-label {
+  background-color: #ff0000 !important;
+}
+*/

@@ -1,0 +1,22 @@
+.search-form {
+  width: 512px;
+  height: 48px;
+  background-color: rgba(0, 0, 0, .04);
+  padding: 0 16px;
+  // border: 1px solid rgba(0, 0, 0, .12);
+}
+
+.search-input {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0 8px;
+  width: 100%;
+  height: 100%;
+  font-family: "Public Sans", sans-serif;
+  font-size: 14px;
+}
+
+mat-icon {
+  color: rgba(0, 0, 0, 0.54);
+}

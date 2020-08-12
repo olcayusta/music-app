@@ -1,1 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  color: var(--html-color);
+  background-color: var(--html-background);
+}
+
+.dark-theme {
+  background-color: #121212;
+
+  .player-content {
+    background-color: #1e1e1e !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Arial, Rubik, sans-serif;
+  // font-family: 'Heebo', sans-serif;
+}
+
+mat-sidenav {
+  width: 256px;
+}
+
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+  min-height: 100vh;
+}
+
+@media (min-width: 599px) {
+  main {
+    max-width: 1600px;
+    margin: 24px auto;
+    padding: 64px 64px 102px 64px;
+  }
+}
+
+main {
+  padding: 64px 0 102px 0;
+}
+
+@media (max-width: 599px) {
+  main {
+    padding: 56px 0;
+  }
+}
+
+.mat-button {
+  padding: 0 8px !important;
+  // letter-spacing: 1.5px;
+  font-family: Arial;
+}
+
+.mat-select-panel {
+  padding: 8px 0 !important;
+}
+
+.mat-menu-panel {
+  background-color: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0px !important;
+}
+
+button.mat-menu-item {
+  font-family: Arial;
+}
+
+.mat-select-panel .mat-optgroup-label, .mat-select-panel .mat-option {
+  height: 48px !important;
+  font-size: 14px !important;
+  line-height: 24px !important;
+}
+
+// PWA RESET
+* {
+  user-select: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-overflow-scrolling: touch;
+}

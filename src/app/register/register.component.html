@@ -1,0 +1,23 @@
+<div class="register-content mat-elevation-z2">
+  <h1>Kayıt ol</h1>
+
+  <form autocomplete="off" spellcheck="false" [formGroup]="registerForm">
+    <div class="form-content">
+      <mat-form-field>
+        <mat-label>E-posta</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Şifre</mat-label>
+        <input [type]="hidePassword ? 'password' : 'text'" matInput formControlName="password">
+        <button mat-icon-button matSuffix (click)="hidePassword = ! hidePassword">
+          <mat-icon>visibility_off</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="row-actions">
+      <button mat-raised-button color="primary">İLERİ</button>
+    </div>
+  </form>
+</div>
+

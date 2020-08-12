@@ -1,0 +1,54 @@
+<!--<h1>Kitaplık</h1>-->
+
+<!--<div class="links">
+  <a routerLink="/playlists" class="active">Çalma listeleri</a>
+  <a routerLink="/albums">Albümler</a>
+  <a routerLink="/artists">Sanatçılar</a>
+  <a routerLink="/likes">Beğenilen şarkılar</a>
+</div>-->
+
+<!--<mat-tab-group>
+  <mat-tab label="Çalma listeleri"></mat-tab>
+  <mat-tab label="Albümler"></mat-tab>
+  <mat-tab label="Sanatçılar"></mat-tab>
+  <mat-tab label="Beğenilen şarkılar"></mat-tab>
+</mat-tab-group>-->
+
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+     routerLink="/library/playlists"
+     routerLinkActive #rla="routerLinkActive"
+     [routerLinkActiveOptions]="{exact: true}"
+     [active]="rla.isActive">
+    <span>Çalma listeleri</span>
+  </a>
+  <a mat-tab-link
+     routerLink="/library/albums"
+     routerLinkActive #rla2="routerLinkActive"
+     [active]="rla2.isActive">
+    <span>Albümler</span>
+  </a>
+  <a mat-tab-link
+     routerLink="/library/artists"
+     routerLinkActive #rla3="routerLinkActive"
+     [active]="rla3.isActive">
+    <span>Sanatçılar</span>
+  </a>
+  <a mat-tab-link
+     routerLink="/library/tracks"
+     routerLinkActive #rla4="routerLinkActive"
+     [active]="rla4.isActive">
+    <span>Beğenilen şarkılar</span>
+  </a>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!--
+<mat-chip-list>
+  <mat-chip>ÇALMA LİSTELERİ</mat-chip>
+  <mat-chip>ALBÜMLER</mat-chip>
+  <mat-chip>SANATÇILAR</mat-chip>
+  <mat-chip>BEĞENİLENLER</mat-chip>
+</mat-chip-list>
+-->

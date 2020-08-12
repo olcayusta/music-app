@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Çalma listesi oluştur</h1>
+<div mat-dialog-content>
+  <form autocomplete="off" spellcheck="false" [formGroup]="form" id="form">
+    <mat-form-field floatLabel="never">
+      <mat-label>Başlık</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+    <mat-form-field floatLabel="never">
+      <mat-label>Açıklama</mat-label>
+      <textarea matInput cdkTextareaAutosize formControlName="description"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select value="public">
+        <mat-option value="public">Genel</mat-option>
+        <mat-option value="private">Gizli</mat-option>
+        <mat-option value="unlisted">Liste dışı</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close="">İPTAL</button>
+  <button form="form" type="submit" mat-button [mat-dialog-close]="form.value" color="primary">BİTTİ</button>
+</div>

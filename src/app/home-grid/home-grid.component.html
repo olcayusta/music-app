@@ -1,0 +1,20 @@
+<div>
+  <h1 class="grid-title">{{title}}</h1>
+<!--  <div>
+    <button mat-icon-button>
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>-->
+</div>
+
+<ng-container *ngIf="data; else defaultData">
+  <div class="items">
+    <app-home-grid-item [item]="item" *ngFor="let item of data"></app-home-grid-item>
+  </div>
+</ng-container>
+
+<ng-template #defaultData>
+  <div class="items">
+    <app-home-grid-item [item]="item" *ngFor="let item of items"></app-home-grid-item>
+  </div>
+</ng-template>

@@ -1,0 +1,26 @@
+<div class="login-content mat-elevation-z2">
+<!--  <mat-progress-bar mode="indeterminate"></mat-progress-bar>-->
+
+  <h1>Oturum aç</h1>
+
+  <form autocomplete="off" spellcheck="false" [formGroup]="loginForm" (submit)="submit()">
+    <div class="form-content">
+      <mat-form-field>
+        <mat-label>E-posta</mat-label>
+        <input matInput formControlName="email">
+        <mat-error *ngIf="loginForm.get('email').hasError('required')">E-posta gerekli</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Şifre</mat-label>
+        <input [type]="hidePassword ? 'password' : 'text'" matInput formControlName="password">
+        <mat-error *ngIf="loginForm.get('password').hasError('required')">Şifre gerekli</mat-error>
+        <button mat-icon-button matSuffix (click)="hidePassword = ! hidePassword" [matTooltip]="hidePassword ? 'Şifeyi göster' : 'Şifreyi gizle'">
+          <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="row-actions">
+      <button type="submit" mat-raised-button color="primary">İLERİ</button>
+    </div>
+  </form>
+</div>

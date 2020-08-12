@@ -1,0 +1,7 @@
+<div class="items">
+  <div class="item" *ngFor="let album of albums">
+    <div class="img-placeholder">
+      <img class="item-img" [attr.data-src]="album.cover" appLazyLoadImg>
+    </div>
+  </div>
+</div>

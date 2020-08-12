@@ -1,0 +1,11 @@
+.album-cover {
+  display: block;
+  width: 300px;
+  height: 300px;
+}
+
+.album-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 64px;
+}

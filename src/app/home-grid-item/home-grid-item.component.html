@@ -1,0 +1,33 @@
+<div class="item">
+  <div class="img-background" matRipple>
+    <img [attr.data-src]="item.img" class="img" appLazyLoadImg>
+   <!-- <div class="item-overlay">
+      <button mat-icon-button>
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+    </div>-->
+  </div>
+  <div class="item-bottom">
+    <div class="details">
+      <a routerLink="/album/5">
+        <div class="title">{{item.title}}</div>
+      </a>
+      <a routerLink="/artist/1">
+        <div class="subtitle">{{item.artist || item.subtitle}}</div>
+      </a>
+    </div>
+    <div>
+      <button mat-icon-button [matMenuTriggerFor]="moreMenu" class="more-menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+<mat-menu #moreMenu="matMenu">
+  <ng-template matMenuContent>
+    <button mat-menu-item>Albümü kütüphaneye ekle</button>
+    <button mat-menu-item (click)="addToPlaylist()">Oynatma listesine ekle</button>
+    <button mat-menu-item>Paylaş</button>
+  </ng-template>
+</mat-menu>

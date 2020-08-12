@@ -1,0 +1,11 @@
+<ng-container *ngIf="user$ | async as user">
+  <div class="settings-content">
+    <div class="profile-img-placeholder">
+      <img class="profile-img" src="{{user.picture}}" alt="{{user.displayName}}">
+    </div>
+
+    <h1>{{user.displayName}}</h1>
+
+  </div>
+</ng-container>
+

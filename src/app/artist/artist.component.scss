@@ -1,0 +1,75 @@
+.artist-head img {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 599px) {
+  .artist-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 64px;
+
+    img {
+      width: 184px;
+      height: 184px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
+
+.artist-media {
+  margin-top: 64px;
+}
+
+.grid-items {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 24px;
+
+  .img-background {
+    position: relative;
+    padding-top: 100%;
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // opacity: 0;
+    transition: opacity 200ms;
+  }
+
+  .details {
+    padding: 16px 0;
+  }
+
+  .title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--medium-emphasis-color);
+  }
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

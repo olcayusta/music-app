@@ -1,0 +1,86 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$mat-deep-purple: (
+  50: #F2E7FE,
+  100: #DBB2FF,
+  200: #BB86FC,
+  300: #985EFF,
+  400: #7F39FB,
+  500: #6200EE,
+  600: #5600E8,
+  700: #3700B3,
+  800: #30009C,
+  900: #23036A,
+  A100: #b388ff,
+  A200: #7c4dff,
+  A400: #651fff,
+  A700: #6200ea,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$music-app-primary: mat-palette($mat-gray);
+$music-app-accent: mat-palette($mat-gray, A200, A100, A400);
+
+$music-app-warn: mat-palette($mat-red);
+
+$music-app-theme: mat-dark-theme($music-app-primary, $music-app-accent, $music-app-warn);
+
+$background: map-get($music-app-theme, background);
+$background: map_merge($background, (
+  background: #000,
+  // app-bar: rgba(23, 23, 23, 0.87),
+  app-bar: #000,
+  card: #1e1e1e,
+  menu: #2f2f2f,
+  scrim: #000
+));
+
+$theme: map_merge($music-app-theme, (background: $background));
+
+@include angular-material-theme($theme);
+
+
+:root {
+  --card-background: #1e1e1e;
+  --html-background: #000;
+  --html-color: #fff;
+  --medium-emphasis-color: rgba(255, 255, 255, 0.6);
+  --bottom-bar-background: #2f2f2f;
+  --player-background: #2f2f2f;
+  --active-border-color: #bb86fc;
+  --avatar-placeholder-color: #2f2f2f;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

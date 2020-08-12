@@ -1,0 +1,23 @@
+<div class="popup mat-elevation-z10">
+  <div class="header">
+    <div class="avatar-placeholder">
+      <img class="avatar" src="{{user.picture}}">
+    </div>
+    <div>
+      <div class="title">{{user.displayName}}</div>
+      <div class="subtitle">{{user.email}}</div>
+    </div>
+  </div>
+  <div class="body">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/settings" (click)="closePopup.emit()">
+        <mat-icon>settings</mat-icon>
+        <span>Hesap & ayarlar</span>
+      </a>
+      <mat-list-item (click)="exitToaApp()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Oturumu kapat</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
+</div>

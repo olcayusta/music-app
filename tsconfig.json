@@ -17,10 +17,16 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@environment/*": ["src/environments/*"],
+      "@auth/*": ["src/auth/*"],
+      "@shared/*": ["src/app/shared/*"]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "strictInjectionParameters": true,
+    "disableTypeScriptVersionCheck": true
   }
 }

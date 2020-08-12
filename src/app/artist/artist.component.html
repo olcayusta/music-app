@@ -1,0 +1,33 @@
+<div class="artist-head">
+  <div class="img-background">
+    <img src="{{artist.picture}}" alt="{{artist.displayName}}">
+  </div>
+  <div>
+    <h1>{{artist.displayName}}</h1>
+    <button mat-stroked-button (click)="addArtistToLibrary()">TAKİP ET</button>
+  </div>
+</div>
+
+<div class="artist-media">
+
+  <div class="media-box" *ngIf="artist.albums">
+    <h3>Albümler</h3>
+    <div class="album-list">
+      <div class="grid-items">
+        <div class="grid-item" *ngFor="let album of artist.albums">
+          <div class="img-background">
+            <img class="img" src="{{album.cover}}" alt="{{album.title}}">
+          </div>
+          <div class="details">
+            <a routerLink="/album/1">
+              <div class="title">{{album.title}}</div>
+            </a>
+            <a [routerLink]="['/artist', artist.id]" *ngFor="let artist of album.artists">
+              <div class="subtitle">{{artist.displayName}}</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

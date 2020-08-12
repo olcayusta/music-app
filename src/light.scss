@@ -1,0 +1,108 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$mat-deep-purple: (
+  50: #F2E7FE,
+  100: #DBB2FF,
+  200: #BB86FC,
+  300: #985EFF,
+  400: #7F39FB,
+  500: #6200EE,
+  600: #5600E8,
+  700: #3700B3,
+  800: #30009C,
+  900: #23036A,
+  A100: #b388ff,
+  A200: #7c4dff,
+  A400: #651fff,
+  A700: #6200ea,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$music-app-primary: mat-palette($mat-gray);
+$music-app-accent: mat-palette($mat-gray, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$music-app-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$music-app-theme: mat-light-theme($music-app-primary, $music-app-accent, $music-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+
+$background: map-get($music-app-theme, background);
+$background: map_merge($background, (
+  background: #fff,
+  // app-bar: rgba(255, 255, 255, 0.87),
+  app-bar: #fff,
+  card: #fff,
+  menu: #fff,
+  scrim: #000
+));
+
+$theme: map_merge($music-app-theme, (background: $background));
+
+@include angular-material-theme($theme);
+
+:root {
+  --card-background: #fff;
+  --html-background: #fff;
+  --html-color: rgba(0, 0, 0, .87);
+  --medium-emphasis-color: rgba(0, 0, 0, .72);
+  --player-background: #fff;
+  --active-border-color: #6200ee;
+  --avatar-placeholder-color: #eee;
+}
+
+/*mat-icon {
+  color: rgba(0, 0, 0, .6);
+}*/
+
+
+
+/*
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+  border-left: 1px solid rgba(0, 0, 0, .12);
+}
+
+::-webkit-scrollbar-thumb {
+  // background: rgba(0, 0, 0, 0.36);
+  background: #212121;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+*/

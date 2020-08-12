@@ -1,0 +1,7 @@
+<button mat-fab (click)="openDialog()">
+  <mat-icon>add</mat-icon>
+</button>
+
+<ul>
+  <li *ngFor="let playlist of playlists">{{playlist.title}}</li>
+</ul>

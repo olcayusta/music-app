@@ -1,0 +1,66 @@
+<mat-toolbar #topBar>
+<!--  <button mat-icon-button (click)="openSidenav.emit()">
+    <mat-icon>menu</mat-icon>
+  </button>-->
+  <a class="site-link" routerLink="/">
+    <span class="app-title">music</span>
+  </a>
+<!--  <span class="flex-spacer"></span>-->
+
+<!--  <app-search-form></app-search-form>-->
+
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link
+       routerLink="/"
+       routerLinkActive #rla="routerLinkActive"
+       [routerLinkActiveOptions]="{exact: true}"
+       [active]="rla.isActive">
+      <mat-icon>
+        <app-home-icon></app-home-icon>
+      </mat-icon>
+      <span>Ana Sayfa</span>
+    </a>
+    <a mat-tab-link
+       routerLink="/library"
+       routerLinkActive #rla2="routerLinkActive"
+       [active]="rla2.isActive">
+      <mat-icon>
+        <app-library-music-icon></app-library-music-icon>
+      </mat-icon>
+      <span>Kitaplık</span>
+    </a>
+  </nav>
+
+<!--  <mat-tab-group>
+    <mat-tab label="Ana sayfa"></mat-tab>
+    <mat-tab label="Kitaplık"></mat-tab>
+   &lt;!&ndash; <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="search-tab-icon">search</mat-icon>
+        <span>Ara</span>
+      </ng-template>
+    </mat-tab>&ndash;&gt;
+  </mat-tab-group>-->
+
+  <span class="flex-spacer"></span>
+
+  <ng-container *ngIf="user; else notLogged">
+
+    <a mat-icon-button routerLink="/search">
+      <mat-icon>search</mat-icon>
+    </a>
+    <button mat-icon-button class="avatar-button" #avatarButton="cdkOverlayOrigin" cdkOverlayOrigin (click)="avatarButtonClick()">
+      <div class="avatar-background">
+        <img #avatar src="{{user.picture}}" class="avatar" alt="{{user.displayName}}" (load)="avatar.style.opacity = '1'">
+      </div>
+    </button>
+
+    <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="avatarButton" [cdkConnectedOverlayScrollStrategy]="scrollStrategy" [cdkConnectedOverlayOpen]="popupOpened">
+      <app-avatar-popup (closePopup)="outsideClicked()" (appOutsideClick)="outsideClicked()"></app-avatar-popup>
+    </ng-template>
+
+  </ng-container>
+  <ng-template #notLogged>
+    <a mat-button routerLink="/login">OTURUM AÇ</a>
+  </ng-template>
+</mat-toolbar>

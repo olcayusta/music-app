@@ -1,0 +1,12 @@
+<div class="items">
+  <div class="item" *ngFor="let artist of artists">
+    <div class="img-placeholder">
+      <img class="item-img" [attr.data-src]="artist.img" appLazyLoadImg>
+    </div>
+    <div class="item-details">
+      <div class="title">Taylor Swift</div>
+      <div class="subtitle">Sanatçı</div>
+    </div>
+  </div>
+</div>
+

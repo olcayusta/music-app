@@ -1,0 +1,49 @@
+mat-nav-list {
+  padding: 8px 0;
+}
+
+:host .mat-list-item {
+  height: 40px;
+  font-size: 14px;
+  font-weight: 400;
+
+  mat-icon {
+    margin-right: 32px;
+  }
+}
+
+.mat-subheader {
+  font-size: 13px !important;
+  margin-top: 0;
+}
+
+.active {
+  border-left: 4px solid var(--active-border-color);
+}
+
+.mobile-player {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  z-index: 1;
+}
+
+@media (max-width: 599px) {
+/*  .bottom-bar {
+    flex-direction: column-reverse;
+  }*/
+}
+
+mat-sidenav {
+  background: none !important;
+  border: none !important;
+}
+
+.fixed-button {
+  position: fixed;
+  bottom: 112px;
+  right: 24px;
+}
